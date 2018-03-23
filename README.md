@@ -14,14 +14,14 @@ This project uses the MEAN stack:
 7. This project implemented in HMVC architecture.
 
 # Dependencies:
-Angular2+ <br>
-NodeJS <br>
-ExpressJS <br>
-MongoDB <br>
-TypeScript <br>
-Angular-cli <br>
-Nodemon <br>
-TsLint <br>
+	Angular2+ <br>
+	NodeJS <br>
+	ExpressJS <br>
+	MongoDB <br>
+	TypeScript <br>
+	Angular-cli <br>
+	Nodemon <br>
+	TsLint <br>
 
 # Prerequisites:
 1. Install Node.js and MongoDB
@@ -39,8 +39,8 @@ TsLint <br>
 
 Now, app is running on localhost:4200 :)
 main port is 4200 but:  <br>
-#shop project listening on port 3000 for client changes
-#shop project listening on port 4200 for server changes
+- shop project listening on port 3000 for client changes  <br>
+- shop project listening on port 4200 for server changes  <br>
 
 
 
