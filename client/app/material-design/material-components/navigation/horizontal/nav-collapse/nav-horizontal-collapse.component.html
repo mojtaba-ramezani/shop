@@ -1,0 +1,19 @@
+<a class="nav-link" matRipple>
+    <mat-icon class="nav-link-icon" *ngIf="item.icon">{{item.icon}}</mat-icon>
+    <span class="nav-link-title">{{item.title}}</span>
+    <mat-icon class="collapse-arrow">keyboard_arrow_right</mat-icon>
+</a>
+
+<div class="children" [ngClass]="{'open': isOpen}">
+
+    <div class="{{appSettings.colorClasses.navbar}}">
+
+        <ng-container *ngFor="let item of item.children">
+            <app-nav-horizontal-item *ngIf="item.type=='item'" [item]="item"></app-nav-horizontal-item>
+            <app-nav-horizontal-collapse *ngIf="item.type=='collapse'" [item]="item"></app-nav-horizontal-collapse>
+            <app-nav-horizontal-collapse *ngIf="item.type=='group'" [item]="item"></app-nav-horizontal-collapse>
+        </ng-container>
+
+    </div>
+
+</div>

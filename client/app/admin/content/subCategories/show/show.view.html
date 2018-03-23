@@ -1,0 +1,59 @@
+<!-- <div class="page-layout simple right-sidenav" fxLayout="row" *ngIf="subCategory">
+    <form name="createSubCategoryForm" [formGroup]="createSubCategoryForm" novalidate style="width:100%"> 
+    <mat-sidenav-container>          
+        <div class="center" fxFlex appPerfectScrollbar> 
+            <div class="header mat-accent-bg p-24 h-160" fxLayout="column" fxLayoutAlign="space-between">    
+                <div fxLayout="row" fxLayoutAlign="space-between start">   
+                        <div class="black-fg" fxLayout="row" fxLayoutAlign="start center">
+                                <mat-icon class="secondary-text s-16">dashboard</mat-icon>
+                                <mat-icon class="secondary-text s-16">chevron_right</mat-icon>
+                                <span class="secondary-text">Products</span>
+                                <mat-icon class="secondary-text s-16">chevron_right</mat-icon>
+                                <span class="secondary-text">Create product</span>
+                            </div>
+                            <div class="h2 mt-16">
+                                    <mat-icon class="mat-icon material-icons" role="img" aria-hidden="true" (click)="goBack()">arrow_back</mat-icon>
+                                    <img src="{{ ( 'one' | backgroundPicture ) }}" style="width:100px;">
+                                    <span class="mat-display-1 mb-0 welcome-message" *appIfOnDom>sddsfd</span>     
+                            </div>                                            
+                    <button mat-raised-button [disabled]="createSubCategoryForm.invalid" color="primary" class="m-16" (click)="saveSubCategory()">save subCategory</button>                        
+                </div>                 
+            </div>    
+            <div class="content p-24 page-layout" appPerfectScrollbar style="position: relative; top: -75px">                                                                   
+                <div class="example-container mat-elevation-z8">                                           
+                    <mat-tab-group class="demo-tab-group mat-white-bg" >
+                        <mat-tab label="Tab 1">
+                            <div class="demo-tab-content">
+                                <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="name" formControlName="name" [(ngModel)]="subCategory.name"  autofocus>
+                                    <mat-error *ngIf="createSubCategoryFormErrors.name.required">
+                                        name is required
+                                    </mat-error>
+                                </mat-form-field> 
+                                <mat-form-field class="example-full-width">
+                                    <input matTooltip="فقط باید رقم وارد کنید دی:(" matInput [(ngModel)]="subCategory.code" placeholder="code" formControlName="code" autofocus>
+                                    <mat-error *ngIf="createSubCategoryFormErrors.code.required">
+                                        code is required
+                                    </mat-error>                    
+                                </mat-form-field>                                                                                                               
+                            </div>
+                        </mat-tab>
+                        <mat-tab label="Tab 2">
+                            <div class="demo-tab-content">
+                            ds
+                            </div>
+                        </mat-tab>                               
+                    </mat-tab-group>                    
+                </div>                                          
+            </div>    
+        </div>        
+    </mat-sidenav-container>    
+    </form>
+</div>
+ -->
+
+ <!-- <input matInput placeholder="name" [(ngModel)]="subCategory.name"> -->
+
+ <ul *ngFor="let product of products">
+     <li>{{product.name}}</li>
+ </ul>

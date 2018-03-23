@@ -1,0 +1,31 @@
+<div id="about" class="p-24" fxLayout="row" fxLayoutWrap>
+        
+            <div class="about-content" fxLayout="column" fxFlex="100" fxFlex.gt-sm="50" fxFlex.gt-md="100"
+                 *appIfOnDom [@animateStagger]="{value:'50'}">
+        
+                <div class="profile-box info-box general" fxLayout="column"
+                     [@animate]="{value:'*',params:{y:'100%'}}">
+        
+                    <header class="mat-accent-bg">
+                        <div class="title">Information</div>
+                    </header>
+        
+                    <div class="content">
+                        <div class="info-line">
+                            <div class="title">username</div>
+                            <div class="info">{{user.username}}</div>
+                        </div>
+        
+                        <div class="info-line">
+                            <div class="title">email</div>
+                            <div class="info">{{user.email}}</div>
+                        </div>
+                               
+                    </div>
+        
+                </div>
+        
+            </div>
+        
+        </div>
+        

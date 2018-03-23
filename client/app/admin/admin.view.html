@@ -1,0 +1,54 @@
+<mat-sidenav-container>
+
+    <div id="app-main-content">
+
+        <ng-container *ngIf="appSettings.layout.toolbar === 'above'">
+            <app-toolbar class="above" [class]="appSettings.colorClasses.toolbar"></app-toolbar>
+        </ng-container>
+
+        <app-navbar-horizontal class="top-navbar" fxHide fxShow.gt-md
+                                [class]="appSettings.colorClasses.navbar"
+                                *ngIf="appSettings.layout.navigation === 'top'">
+        </app-navbar-horizontal>
+
+        <div id="wrapper">
+
+            <app-navbar-vertical [folded]="false"
+                                  class="left-navbar"
+                                  [class]="appSettings.colorClasses.navbar"
+                                  *ngIf="appSettings.layout.navigation === 'left' || appSettings.layout.navigation === 'top'">
+            </app-navbar-vertical>
+
+            <div class="content-wrapper">
+
+                <ng-container *ngIf="appSettings.layout.toolbar === 'below'">
+                    <app-toolbar class="below" [class]="appSettings.colorClasses.toolbar"></app-toolbar>
+                </ng-container>
+
+                <app-content></app-content>
+
+                <ng-container *ngIf="appSettings.layout.footer === 'below'">
+                    <app-footer class="below" [class]="appSettings.colorClasses.footer"></app-footer>
+                </ng-container>
+
+            </div>
+
+            <app-navbar-vertical [folded]="false"
+                                  class="right-navbar"
+                                  [class]="appSettings.colorClasses.navbar"
+                                  *ngIf="appSettings.layout.navigation === 'right'">
+            </app-navbar-vertical>
+
+        </div>
+
+        <ng-container *ngIf="appSettings.layout.footer === 'above'">
+            <app-footer class="above" [class]="appSettings.colorClasses.footer"></app-footer>
+        </ng-container>
+
+    </div>
+
+    <mat-sidenav appMatSidenavHelper="quick-panel" align="end">
+        <app-quick-panel></app-quick-panel>
+    </mat-sidenav>
+
+</mat-sidenav-container>

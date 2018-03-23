@@ -1,0 +1,78 @@
+<div id="register" fxLayout="column" appPerfectScrollbar>
+
+    <div id="register-form-wrapper" fxLayout="column" fxLayoutAlign="center center">
+
+        <div id="register-form" *appIfOnDom [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}">
+
+            <div class="logo">
+                <img src="assets/images/logos/app.svg">
+            </div>
+
+            <div class="title">CREATE AN ACCOUNT</div>
+
+            <form name="registerForm" [formGroup]="registerForm" (ngSubmit)="register()" novalidate>
+
+                <mat-form-field>
+                    <input matInput placeholder="Name" formControlName="username" autofocus>
+                    <mat-error *ngIf="registerFormErrors.username.required">
+                        Name is required
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput placeholder="Email" formControlName="email">
+                    <mat-error *ngIf="registerFormErrors.email.required">
+                        Email is required
+                    </mat-error>
+                    <mat-error *ngIf="!registerFormErrors.email.required && registerFormErrors.email.email">
+                        Please enter a valid email address
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput placeholder="Password" type="password" formControlName="password">
+                    <mat-error *ngIf="registerFormErrors.password.required">
+                        Password is required
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput placeholder="Password (Confirm)" type="password" formControlName="passwordConfirm">
+                    <mat-error *ngIf="registerFormErrors.passwordConfirm.required">
+                        Password confirmation is required
+                    </mat-error>
+                </mat-form-field>
+
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-black-tie"></i></span>
+                    <select class="form-control" name="role" formControlName="role">
+                    <option value="" selected disabled>Role</option>
+                    <option value="user">User</option>
+                    <option value="admin">Admin</option>
+                    </select>
+                </div>
+
+                <div class="terms" fxLayout="row" fxLayoutAlign="center center">
+                    <mat-checkbox name="terms" aria-label="I read and accept" required>
+                        <span>I read and accept</span>
+                    </mat-checkbox>
+                    <a href="#">terms and conditions</a>
+                </div>
+
+                <button mat-raised-button color="accent" class="submit-button" aria-label="CREATE AN ACCOUNT"
+                        [disabled]="registerForm.invalid">
+                    CREATE AN ACCOUNT
+                </button>
+
+            </form>
+
+            <div class="register" fxLayout="column" fxLayoutAlign="center center">
+                <span class="text">Already have an account?</span>
+                <a class="link" [routerLink]="'/admin/login'">Login</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

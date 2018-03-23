@@ -1,0 +1,63 @@
+<mat-toolbar class="p-0 mat-elevation-z1">
+
+    <mat-progress-bar *ngIf="showLoadingBar" class="loading-bar" color="accent" mode="indeterminate"></mat-progress-bar>
+
+    <div fxFlex fxFill fxLayout="row" fxLayoutAlign="start center">
+
+        <div fxFlex="1 0 auto" fxLayout="row" fxLayoutAlign="start center">
+
+            <div fxLayout="row" fxLayoutAlign="start center" *ngIf="horizontalNav">
+                <div class="logo ml-16">
+                    <!-- <img class="logo-icon" src="assets/images/logos/app.svg"> -->
+                </div>
+            </div>
+    
+        </div>
+
+        <div class="" fxFlex="0 1 auto" fxLayout="row" fxLayoutAlign="start center">
+
+            <button mat-button [matMenuTriggerFor]="userMenu"
+                    class="user-button">
+                <div fxLayout="row" fxLayoutAlign="center center">
+                    <img class="avatar" src="{{ ( 'one' | profilePicture ) }}">
+                    <span class="username mr-12" fxHide fxShow.gt-sm>{{user.username}}</span>
+                    <mat-icon class="s-16" fxHide.xs>keyboard_arrow_down</mat-icon>
+                </div>
+            </button>
+
+            <mat-menu #userMenu="matMenu">
+                <a href="/admin/profile">
+                    <button mat-menu-item>
+                        <mat-icon>account_circle</mat-icon>
+                        <span>My Profile</span>
+                    </button>    
+                </a>                
+
+                <a href="/admin/dashboard">
+                    <button mat-menu-item class="">
+                        <mat-icon>dashboard</mat-icon>
+                        <span>Dashboard</span>
+                    </button>
+                </a>
+                <a href="/admin/logout">
+                    <button mat-menu-item class="">
+                        <mat-icon>exit_to_app</mat-icon>
+                        <span>Logout</span>
+                    </button>
+                </a>
+            </mat-menu>
+
+            <div class="toolbar-separator"></div>        
+         
+            <div class="toolbar-separator" fxHide fxShow.gt-xs></div>
+
+            <button mat-icon-button
+                    class="mat-icon-button quick-panel-toggle-button"
+                    appMatSidenavToggler="quick-panel"
+                    aria-label="Toggle quick panel">
+                <mat-icon class="icon">format_list_bulleted</mat-icon>
+            </button>
+
+        </div>
+    </div>
+</mat-toolbar>
