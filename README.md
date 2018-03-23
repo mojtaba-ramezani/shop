@@ -14,14 +14,14 @@ This project uses the MEAN stack:
 7. This project implemented in HMVC architecture.
 
 # Dependencies:
-	Angular2+ <br>
-	NodeJS <br>
-	ExpressJS <br>
-	MongoDB <br>
-	TypeScript <br>
-	Angular-cli <br>
-	Nodemon <br>
-	TsLint <br>
+	Angular2+ 
+	NodeJS 
+	ExpressJS 
+	MongoDB 
+	TypeScript 
+	Angular-cli 
+	Nodemon 
+	TsLint 
 
 # Prerequisites:
 1. Install Node.js and MongoDB
